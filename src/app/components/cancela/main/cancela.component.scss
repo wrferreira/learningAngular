@@ -1,0 +1,12 @@
+.blank {
+  box-shadow: none;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  border-radius: 0;
+}
+
+::ng-deep .initial-card{
+  border-radius: 0 !important;
+}

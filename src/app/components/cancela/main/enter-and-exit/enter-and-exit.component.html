@@ -1,0 +1,26 @@
+<mat-card class="initial-card">
+  <div class="card-logo">
+    <img mat-card-image src="/assets/img/novo-logo@2x.png" alt="">
+  </div>
+  <!-- <mat-divider></mat-divider> -->
+  <div class="content">
+    <div class="info">
+      <h1>Detalhes da moto</h1>
+      <span>Id do registro: <b>000019</b></span>
+      <span>Placa: <b>EAI2E19</b></span>
+      <span>Ano do veículo: <b>1999</b></span>
+      <span>Chassi: <b>WERTYUCVBNHJKVBNMGHJFGHJK</b></span>
+      <span>Situação: <b>Quebrado</b></span>
+    </div>
+    <div class="alignment">
+        <div class="alignment-column">
+          <h2>Selecione a direção</h2>
+        <div class="actions">
+          <div *ngFor="let tile of tiles" class="actions-btn alignment-column" [style.background]="tile.color">
+            <span>{{tile.text}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>
