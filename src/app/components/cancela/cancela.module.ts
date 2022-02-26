@@ -12,10 +12,12 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogSuccessComponent } from './main/dialog-success/dialog-success.component';
 
 
 @NgModule({
-  declarations: [CancelaComponent, InitialComponent, LoadingComponent, EnterAndExitComponent],
+  declarations: [CancelaComponent, InitialComponent, LoadingComponent, EnterAndExitComponent, DialogSuccessComponent],
   imports: [
     CommonModule,
     CancelaRoutingModule,
@@ -23,7 +25,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatGridListModule,
     MatProgressBarModule,
     MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ]
 })
 export class CancelaModule { }

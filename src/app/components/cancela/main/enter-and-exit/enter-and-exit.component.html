@@ -2,7 +2,6 @@
   <div class="card-logo">
     <img mat-card-image src="/assets/img/novo-logo@2x.png" alt="">
   </div>
-  <!-- <mat-divider></mat-divider> -->
   <div class="content">
     <div class="info">
       <h1>Detalhes da moto</h1>
@@ -30,7 +29,7 @@
         </div>
         <div class="actions" *ngIf="type !== 0">
           <div *ngFor="let action of actions" class="actions-btn alignment-column" [style.background]="action.color">
-            <div class="actions-btn-container">
+            <div class="actions-btn-container" (click)="openDialogTime()">
               <div class="actions-btn-text">
                 <span>{{action.text}}</span>
               </div>
@@ -41,7 +40,7 @@
           </div>
         </div>
         <div class="alignment-start back-icon" *ngIf="type !== 0" (click)="type = 0">
-          <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon>
+          <mat-icon aria-hidden="false" aria-label="icon">arrow_back</mat-icon>
         </div>
       </div>
     </div>

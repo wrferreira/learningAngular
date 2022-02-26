@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogSuccessComponent } from '../dialog-success/dialog-success.component';
 
 @Component({
   selector: 'app-enter-and-exit',
@@ -8,46 +10,31 @@ import { Component, OnInit } from '@angular/core';
 
 export class EnterAndExitComponent implements OnInit {
   directions = [
-    {id: 1, text: 'Entrada', color: this.color()},
-    {id: 2, text: 'Saída', color: this.color()},
+    {id: 1, text: 'Entrada'},
+    {id: 2, text: 'Saída'},
   ];
 
   type: Number = 0;
 
   actions = [
-    {text: 'One', color: this.color()},
-    {text: 'Two', color: this.color()},
-    {text: 'Three', color: this.color()},
-    {text: 'Four', cols: 2, rows: 1, color: this.color()},
-    {text: 'One', color: this.color()},
-    {text: 'Two', color: this.color()},
-    {text: 'Three', color: this.color()},
-    {text: 'Four', cols: 2, rows: 1, color: this.color()},
-    {text: 'One', color: this.color()},
-    {text: 'Two', color: this.color()},
-    {text: 'Three', color: this.color()},
-    {text: 'Four', cols: 2, rows: 1, color: this.color()},
+    {text: 'One'},
+    {text: 'Two'},
+    {text: 'Three'},
+    {text: 'Four'},
+    {text: 'One'},
+    {text: 'Two'},
+    {text: 'Three'},
+    {text: 'Four'},
+    {text: 'One'},
+    {text: 'Two'},
+    {text: 'Three'},
+    {text: 'Four'},
   ];
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
-
-  // color(opacity = 0.4) {
-  //   let r = Math.random() * 255;
-
-  //   let g = Math.random() * 255;
-
-  //   let b = Math.random() * 255;
-
-  //   return `rgba(${r}, ${g}, ${b}, ${opacity})`;
-  // }
-
-  // color() {
-  //   let opacity = Math.random() * 9;
-  //   return `rgba(${0}, ${177}, ${49}, 0.${opacity.toFixed()})`;
-  // }
 
   color() {
     return `rgba(${250}, ${250}, ${250})`
@@ -56,6 +43,22 @@ export class EnterAndExitComponent implements OnInit {
   // color() {
   //   return `rgba(${0}, ${177}, ${49}, ${0.7})`
   // }
+
+  openDialogTime(){
+    setTimeout(() => {
+      this.openDialog()
+    }, 500);
+  }
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogSuccessComponent, {
+      width: '300px',
+      height: '300px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
   chooseDirection(value){
     setTimeout(() => {
