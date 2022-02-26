@@ -13,12 +13,35 @@
       <span>Situação: <b>Quebrado</b></span>
     </div>
     <div class="alignment">
-        <div class="alignment-column">
-          <h2>Selecione a direção</h2>
-        <div class="actions">
-          <div *ngFor="let tile of tiles" class="actions-btn alignment-column" [style.background]="tile.color">
-            <span>{{tile.text}}</span>
+      <div class="alignment-column">
+        <h2 *ngIf="type === 0"> Selecione a direção </h2>
+        <h2 *ngIf="type !== 0"> {{ type === 1 ? 'Selecione o motivo da sua entrada' : 'Selecione o motivo da sua saída'}} </h2>
+        <div class="actions" *ngIf="type === 0">
+          <div *ngFor="let direction of directions" class="actions-btn alignment-column" [style.background]="direction.color">
+            <div class="actions-btn-container" (click)="chooseDirection(direction.id)">
+              <div class="actions-btn-text">
+                <span>{{direction.text}}</span>
+              </div>
+              <div class="contents">
+                <div class="inner"></div>
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="actions" *ngIf="type !== 0">
+          <div *ngFor="let action of actions" class="actions-btn alignment-column" [style.background]="action.color">
+            <div class="actions-btn-container">
+              <div class="actions-btn-text">
+                <span>{{action.text}}</span>
+              </div>
+              <div class="contents">
+                <div class="inner"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="alignment-start back-icon" *ngIf="type !== 0" (click)="type = 0">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon>
         </div>
       </div>
     </div>

@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatCardModule,
     MatGridListModule,
     MatProgressBarModule,
-    MatDividerModule
+    MatDividerModule,
+    MatIconModule
   ]
 })
 export class CancelaModule { }

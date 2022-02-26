@@ -7,25 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class EnterAndExitComponent implements OnInit {
-  tiles = [
-    {text: 'Entrada', color: this.color()},
-    {text: 'Saída', color: this.color()},
+  directions = [
+    {id: 1, text: 'Entrada', color: this.color()},
+    {id: 2, text: 'Saída', color: this.color()},
   ];
 
-  // tiles = [
-  //   {text: 'One', color: this.color()},
-  //   {text: 'Two', color: this.color()},
-  //   {text: 'Three', color: this.color()},
-  //   {text: 'Four', cols: 2, rows: 1, color: this.color()},
-  //   {text: 'One', color: this.color()},
-  //   {text: 'Two', color: this.color()},
-  //   {text: 'Three', color: this.color()},
-  //   {text: 'Four', cols: 2, rows: 1, color: this.color()},
-  //   {text: 'One', color: this.color()},
-  //   {text: 'Two', color: this.color()},
-  //   {text: 'Three', color: this.color()},
-  //   {text: 'Four', cols: 2, rows: 1, color: this.color()},
-  // ];
+  type: Number = 0;
+
+  actions = [
+    {text: 'One', color: this.color()},
+    {text: 'Two', color: this.color()},
+    {text: 'Three', color: this.color()},
+    {text: 'Four', cols: 2, rows: 1, color: this.color()},
+    {text: 'One', color: this.color()},
+    {text: 'Two', color: this.color()},
+    {text: 'Three', color: this.color()},
+    {text: 'Four', cols: 2, rows: 1, color: this.color()},
+    {text: 'One', color: this.color()},
+    {text: 'Two', color: this.color()},
+    {text: 'Three', color: this.color()},
+    {text: 'Four', cols: 2, rows: 1, color: this.color()},
+  ];
 
   constructor() { }
 
@@ -47,11 +49,17 @@ export class EnterAndExitComponent implements OnInit {
   //   return `rgba(${0}, ${177}, ${49}, 0.${opacity.toFixed()})`;
   // }
 
+  color() {
+    return `rgba(${250}, ${250}, ${250})`
+  }
+
   // color() {
-  //   return `rgba(${250}, ${250}, ${250})`
+  //   return `rgba(${0}, ${177}, ${49}, ${0.7})`
   // }
 
-  color() {
-    return `rgba(${0}, ${177}, ${49}, ${0.7})`
+  chooseDirection(value){
+    setTimeout(() => {
+      this.type = value;
+    }, 500);
   }
 }

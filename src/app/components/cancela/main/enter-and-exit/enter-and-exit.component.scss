@@ -26,6 +26,7 @@
   width: 50px;
   height: 50px;
   margin: 10px;
+  margin-left: 20px;
 }
 
 .info{
@@ -67,7 +68,7 @@
   border-radius: 8px;
   cursor: pointer;
   margin: 5px;
-  // box-shadow: 0 4px 5px #ccc;
+  box-shadow: 0 4px 5px #ccc;
 }
 
 .actions-btn span{
@@ -97,6 +98,58 @@
   align-items: center;
 }
 
+.contents,
+.contents .inner {
+  bottom: 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+  width: 100%;
+}
+
+.contents .inner {
+  background: #00b131;
+  // background-color: black;
+  width: 0%;
+  overflow: hidden;
+  -webkit-transition: width 0.5s ease-in-out;
+  -moz-transition: width 0.5s ease-in-out;
+  -o-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+
+.actions-btn:hover .contents .inner {
+  width: 100%;
+}
+
+.actions-btn-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+.actions-btn-text{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alignment-start {
+  padding-top: 30px;
+  width: 85%;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.back-icon {
+  cursor: pointer;
+}
 
 @media (max-width: 1300px) {
   .actions-btn {
