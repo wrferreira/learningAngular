@@ -1,0 +1,109 @@
+.initial-card {
+  box-shadow: none;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.card-logo {
+  width: 100%;
+  background: #fafafa;
+  box-shadow: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 0 1em #ccc;
+}
+
+.text {
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.initial-card img {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  margin-left: 20px;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 70px);
+  justify-content: center;
+  align-items: center;
+}
+
+.info h1 {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.info h2 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 2%;
+}
+
+.content {
+  height: 100%;
+}
+
+.icon-dissatisfied {
+  font-size: 120px;
+  width: 140px;
+  height: 140px;
+  color: #bdbdbd;
+}
+
+::ng-deep.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: transparent !important;
+}
+
+::ng-deep.mat-form-field-appearance-fill .mat-form-field-flex {
+  padding: 0 !important;
+}
+
+::ng-deep.mat-form-field-infix {
+  width: 400px !important;
+}
+
+.alignment-column {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-search {
+  width: 400px;
+  background: #00b131;
+  padding: 5px;
+  cursor: pointer !important;
+}
+
+.text {
+  color: white;
+  font-size: 18px;
+  margin-left: 5px;
+  font-weight: 500;
+}
+
+.icon-search {
+  color: white;
+}
+
+.pb-2 {
+  padding-bottom: 1em;
+}
+
+::ng-deep.mat-error {
+  font-size: 16px;
+}
+
+input{
+  font-size: 16px;
+}

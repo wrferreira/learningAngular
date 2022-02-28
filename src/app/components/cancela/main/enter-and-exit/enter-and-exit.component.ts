@@ -17,32 +17,17 @@ export class EnterAndExitComponent implements OnInit {
   type: Number = 0;
 
   actions = [
-    {text: 'One'},
-    {text: 'Two'},
-    {text: 'Three'},
-    {text: 'Four'},
-    {text: 'One'},
-    {text: 'Two'},
-    {text: 'Three'},
-    {text: 'Four'},
-    {text: 'One'},
-    {text: 'Two'},
-    {text: 'Three'},
-    {text: 'Four'},
+    {text: 'Lavagem'},
+    {text: 'Suporte de rua'},
+    {text: 'Dar baixa de B.O'},
+    {text: 'Uso administrativo'},
+    {text: 'Uso administrativo'},
   ];
 
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
-
-  color() {
-    return `rgba(${250}, ${250}, ${250})`
-  }
-
-  // color() {
-  //   return `rgba(${0}, ${177}, ${49}, ${0.7})`
-  // }
 
   openDialogTime(){
     setTimeout(() => {

@@ -1,0 +1,27 @@
+<mat-card class="initial-card">
+  <div class="card-logo">
+    <img mat-card-image src="/assets/img/novo-logo@2x.png" alt="">
+  </div>
+  <div class="content">
+    <div class="info">
+      <mat-icon class="icon-dissatisfied">report</mat-icon>
+      <h1>Huummmmm... não conseguimos fazer a identificação automatica da moto</h1>
+      <h2>Entre com a placa ou o chassi da moto: </h2>
+
+      <form class="plate alignment-column">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Placa/Chassi</mat-label>
+          <input matInput placeholder="PLA8T12" [formControl]="plateFormControl" (keyup)="valid()" maxlength="17">
+        </mat-form-field>
+        <mat-error *ngIf="error !== ''" class="pb-2">
+         {{ error }}
+        </mat-error>
+
+        <button mat-button class="btn-search" [disabled]="error !== '' || plateFormControl.value == ''">
+          <mat-icon class="icon-search">search</mat-icon>
+          <span class="text">Procurar</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</mat-card>

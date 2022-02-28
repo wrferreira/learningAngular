@@ -74,6 +74,10 @@
 .actions-btn span{
   font-size: 20px;
   font-weight: 400;
+  white-space: normal;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
 }
 
 .alignment {
@@ -110,7 +114,6 @@
 
 .contents .inner {
   background: #00b131;
-  // background-color: black;
   width: 0%;
   overflow: hidden;
   -webkit-transition: width 0.5s ease-in-out;
@@ -160,5 +163,27 @@
 @media (max-width: 1049px) {
   .actions-btn {
     width: 150px;
+  }
+}
+
+
+@media (max-width: 1047px) {
+  .actions-btn span{
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 950px) {
+  .actions-btn {
+    height: 60px;
+  }
+
+  .actions-btn span, .info span {
+    font-size: 16px;
+  }
+
+  .info h1 {
+    font-size: 28px;
   }
 }
