@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-reading-plate-error',
-  templateUrl: './reading-plate-error.component.html',
-  styleUrls: ['./reading-plate-error.component.scss']
+  selector: 'app-error-reading',
+  templateUrl: './error-reading.component.html',
+  styleUrls: ['./error-reading.component.scss']
 })
-export class ReadingPlateErrorComponent implements OnInit {
+export class ErrorReadingComponent implements OnInit {
   plateFormControl = new FormControl('')
   error = ''
 

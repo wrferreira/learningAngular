@@ -33,8 +33,17 @@
 
 .text {
   color: white;
-  font-size: 28px;
+  font-size: 35px;
   font-weight: 300;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+span {
+  color: white;  
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center; 
 }
 
 @keyframes flip {

@@ -1,0 +1,35 @@
+<mat-card class="initial-card">
+    <div class="card-logo">
+      <img mat-card-image src="/assets/img/novo-logo@2x.png" alt="">
+    </div>
+    <div class="content">
+      <div class="info">
+        <h1>Detalhes da moto</h1>        
+        <span>Placa: <b>EAI-2E19</b></span>        
+        <span>Situação: <b>Pronta pra aluguel</b></span>
+        <span>Chassi: <b>WERTYUCVBNHJKVBNMGHJFGHJK</b></span>
+        <img class="img-info" src="/assets/img/img2.png">
+      </div>
+      <div class="alignment">
+        <div class="alignment-column">
+          <h2> {{ type === 1 ? 'Selecione o motivo da sua entrada' : 'Selecione o motivo da sua saída'}} </h2>          
+          <div class="actions">
+            <div *ngFor="let action of actions" class="actions-btn alignment-column" [style.background]="action.color">
+              <div class="actions-btn-container" (click)="openDialog()">
+                <div class="actions-btn-text">
+                  <span>{{action.text}}</span>
+                </div>
+                <div class="contents">
+                  <div class="inner"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="alignment-start back-icon" (click)="chooseDirection()">
+            <mat-icon aria-hidden="false" aria-label="icon">arrow_back</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+  

@@ -17,12 +17,7 @@
   box-shadow: 0 0 1em #ccc;
 }
 
-.text {
-  font-size: 23px;
-  font-weight: 400;
-}
-
-.initial-card img {
+.card-logo img {
   width: 50px;
   height: 50px;
   margin: 10px;
@@ -37,22 +32,25 @@
   justify-content: center;
   padding-left: 20px;
   padding-right: 20px;
+
+  h1 {
+    font-size: 30px;
+    font-weight: 500;
+  }
+  span {
+    font-size: 22px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    white-space: nowrap;
+  }
+  span b {
+    font-weight: 500;
+  }
 }
 
-.info h1 {
-  font-size: 30px;
-  font-weight: 500;
-}
-
-.info span {
-  font-size: 18px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  white-space: nowrap;
-}
-
-.info span b {
-  font-weight: 500;
+.img-info {
+  width: 350px;
+  height: 250px;
 }
 
 .actions {

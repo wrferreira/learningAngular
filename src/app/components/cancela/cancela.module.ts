@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CancelaRoutingModule } from './cancela-routing.module';
-import { CancelaComponent } from './main/cancela.component';
-import { InitialComponent } from './main/initial/initial.component';
-import { LoadingComponent } from './main/loading/loading.component';
-import { EnterAndExitComponent } from './main/enter-and-exit/enter-and-exit.component';
-import { DialogSuccessComponent } from './main/dialog-success/dialog-success.component';
-import { ReadingPlateErrorComponent } from './main/reading-plate-error/reading-plate-error.component';
+import { CancelaComponent } from './cancela.component';
+import { InitialComponent } from './initial/initial.component';
+import { LoadingComponent } from './loading/loading.component';
+import { DirectionComponent } from './direction/direction.component';
+import { DialogSuccessComponent } from './dialogs/success/dialog-success.component';
+import { ErrorReadingComponent } from './error-reading/error-reading.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -18,9 +18,22 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchComponent } from './search/search.component';
+import { ManualEntryComponent } from './manual-entry/manual-entry.component';
+import { DialogErrorComponent } from './dialogs/error/dialog-error.component';
 
 @NgModule({
-  declarations: [CancelaComponent, InitialComponent, LoadingComponent, EnterAndExitComponent, DialogSuccessComponent, ReadingPlateErrorComponent],
+  declarations: [
+    CancelaComponent, 
+    InitialComponent, 
+    LoadingComponent, 
+    DirectionComponent, 
+    DialogSuccessComponent, 
+    DialogErrorComponent, 
+    ErrorReadingComponent, 
+    SearchComponent, 
+    ManualEntryComponent
+  ],
   imports: [
     CommonModule,
     CancelaRoutingModule,
