@@ -1,0 +1,108 @@
+.plate {
+  width: 180px;
+  height: 180px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 8px !important;
+  background-color: #3a3b39;
+  border: 2px solid #dad9db;
+  margin-top: 10px;
+}
+
+.container {
+  width: 96%;
+  height: 96%;
+  background-color: white;
+  border-radius: 3px !important;
+}
+
+.alignment-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alignment-row-end {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.alignment-column-between {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.top-plate {
+  background-color: #2d6ddc;
+  height: 40px;
+  padding: 0 10px;
+  box-shadow: inset 0px 4px 0.8rem #0a3a96;
+}
+.img-container {
+  width: 40px;
+}
+
+.img-container img{
+  width: 100%;
+}
+
+.country {
+  color: white;
+  padding: 0px 20px 0 20px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.img-info.flag {
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+@font-face {
+  font-family: mandator;
+  src: url(/assets/fonts/MANDATOR.ttf)
+}
+
+.br, .number-plate {
+  font-family: mandator;
+}
+
+.number-plate {
+  font-size: 52px;
+  line-height: 1;
+  text-transform: uppercase;
+  word-break: break-all;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.br {
+  font-size: 18px;
+}
+
+.bottom-plate{
+  background-color: #e9ebea;
+  height: calc(100% - 40px);
+}
+
+.img-container-qrcode {
+  width: 20px;
+}
+
+.img-container-qrcode img {
+  width: 100%;
+}
+
+.margin {
+  margin: 10px 0 10px 10px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.number-plate-container{
+  text-align: center;
+}

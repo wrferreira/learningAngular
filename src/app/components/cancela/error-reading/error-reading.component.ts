@@ -8,11 +8,21 @@ import { FormControl } from '@angular/forms';
 })
 export class ErrorReadingComponent implements OnInit {
   plateFormControl = new FormControl('')
+  plateComponent : string;
   error = ''
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.plateFormControl);
+
+    this.plateFormControl.get('plate').valueChanges.subscribe(x => {
+      // console.log(x.key);
+      this.plateComponent += x.key;
+      if (this.plateComponent.length == 3) {
+        this.plateComponent += ''
+      }
+    })
   }
 
   valid(){

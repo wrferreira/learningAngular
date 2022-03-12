@@ -21,6 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { ManualEntryComponent } from './manual-entry/manual-entry.component';
 import { DialogErrorComponent } from './dialogs/error/dialog-error.component';
+import { PlateComponent } from './plate/plate.component';
+import { ChassiComponent } from './chassi/chassi.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import { DialogErrorComponent } from './dialogs/error/dialog-error.component';
     DialogErrorComponent, 
     ErrorReadingComponent, 
     SearchComponent, 
-    ManualEntryComponent
+    ManualEntryComponent, PlateComponent, ChassiComponent
   ],
   imports: [
     CommonModule,

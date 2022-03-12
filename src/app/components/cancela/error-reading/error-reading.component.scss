@@ -112,6 +112,15 @@ input{
   font-size: 16px;
 }
 
+.alignment-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.margin {
+  margin-right: 100px;
+}
+
 @media (max-width: 1000px) {
   .info h1 {
     font-size: 24px;

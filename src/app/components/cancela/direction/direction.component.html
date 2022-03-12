@@ -4,15 +4,17 @@
   </div>
   <div class="content">
     <div class="info">
-      <h1>Detalhes da moto</h1>      
-      <span>Placa: <b>EAI-2E19</b></span>      
+      <h1>Detalhes da moto</h1>
+      <span>Placa: <b>EAI-2E19</b></span>
       <span>Situação: <b>Pronta pra aluguel</b></span>
       <span>Chassi: <b>WERTYUCVBNHJKVBNMGHJFGHJK</b></span>
-      <img class="img-info" src="/assets/img/img3.png">
+      <div class="img-container">
+        <img class="img-info" src="/assets/img/img3.png">
+      </div>
     </div>
     <div class="alignment">
       <div class="alignment-column">
-        <h2> Selecione a direção </h2>        
+        <h2> Selecione a direção </h2>
         <div class="actions">
           <div *ngFor="let direction of directions" class="actions-btn alignment-column" [style.background]="direction.color">
             <div class="actions-btn-container" (click)="chooseDirection(direction.id)">
@@ -24,7 +26,7 @@
               </div>
             </div>
           </div>
-        </div>        
+        </div>
       </div>
     </div>
   </div>

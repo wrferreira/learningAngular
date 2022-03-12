@@ -14,13 +14,13 @@ export class CancelaComponent implements OnInit {
 
   @HostListener('document:keydown', ['$event'])
   handleKeyBoardEvent(event: KeyboardEvent){
-    console.log(event)
-    if(event.code == 'Space'){
-      this.router.navigate(['/cancela/loading'])
-    }
-    if(event.code == 'Enter'){
-      this.router.navigate(['/cancela/options'])
-    }
+    // console.log(event)
+    // if(event.code == 'Space'){
+    //   this.router.navigate(['/cancela/loading'])
+    // }
+    // if(event.code == 'Enter'){
+    //   this.router.navigate(['/cancela/options'])
+    // }
   }
 
   ngOnInit(): void {
