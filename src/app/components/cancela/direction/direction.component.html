@@ -8,8 +8,28 @@
       <span>Placa: <b>EAI-2E19</b></span>
       <span>Situação: <b>Pronta pra aluguel</b></span>
       <span>Chassi: <b>WERTYUCVBNHJKVBNMGHJFGHJK</b></span>
-      <div class="img-container">
-        <img class="img-info" src="/assets/img/img3.png">
+      <div class="size">
+          <mat-carousel
+          timings="200ms ease-in"
+          [autoplay]="true"
+          interval="4000"
+          [loop]="true"
+          [useMouseWheel]="true"
+          [hideIndicators]="true"
+          [useKeyboard]="true"
+          height="100%"
+        >
+        <mat-carousel-slide>
+          <app-plate *ngIf="plate.length <= 7" [plate]="plate"></app-plate>
+          <app-chassi *ngIf="plate.length > 7" [plate]="plate"></app-chassi>
+        </mat-carousel-slide>
+        <mat-carousel-slide>
+          <img class="img-info" src="/assets/img/placa.jpg">
+        </mat-carousel-slide>
+        <mat-carousel-slide>
+          <img class="img-info" src="/assets/img/assinatura.jpg">
+        </mat-carousel-slide>
+        </mat-carousel>
       </div>
     </div>
     <div class="alignment">

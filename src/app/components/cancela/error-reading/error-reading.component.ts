@@ -14,15 +14,15 @@ export class ErrorReadingComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.plateFormControl);
+    // console.log(this.plateFormControl);
 
-    this.plateFormControl.get('plate').valueChanges.subscribe(x => {
-      // console.log(x.key);
-      this.plateComponent += x.key;
-      if (this.plateComponent.length == 3) {
-        this.plateComponent += ''
-      }
-    })
+    // this.plateFormControl.get('plate').valueChanges.subscribe(x => {
+    //   // console.log(x.key);
+    //   this.plateComponent += x.key;
+    //   if (this.plateComponent.length == 3) {
+    //     this.plateComponent += ''
+    //   }
+    // })
   }
 
   valid(){
@@ -33,5 +33,8 @@ export class ErrorReadingComponent implements OnInit {
     else {
       this.plateFormControl.value.length >= 8 ? this.error = "Chassi inválido" : this.error = "Placa inválida";
     }
+  }
+  clear() {
+    // this.plateFormControl.reset()
   }
 }

@@ -8,11 +8,13 @@ import { Router } from '@angular/router';
 })
 
 export class DirectionComponent implements OnInit {
-    
+
   public directions = [
     {id: 1, text: 'Entrada'},
     {id: 2, text: 'Saída'},
-  ]; 
+  ];
+
+  plate: string = 'BRA 0S21';
 
   constructor(
     private router: Router
@@ -20,7 +22,7 @@ export class DirectionComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
   chooseDirection(directionId: number){
     this.router.navigate(['/cancela/options'])
   }

@@ -8,8 +8,9 @@
         <span>Placa: <b>EAI-2E19</b></span>
         <span>Situação: <b>Pronta pra aluguel</b></span>
         <span>Chassi: <b>WERTYUCVBNHJKVBNMGHJFGHJK</b></span>
-        <div class="img-container">
-          <img class="img-info" src="/assets/img/img2.png">
+        <div class="plate-component">
+          <app-plate *ngIf="plate.length <= 7" [plate]="plate"></app-plate>
+          <app-chassi *ngIf="plate.length > 7" [plate]="plate"></app-chassi>
         </div>
       </div>
       <div class="alignment">

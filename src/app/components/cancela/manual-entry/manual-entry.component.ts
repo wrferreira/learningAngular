@@ -16,6 +16,8 @@ export class ManualEntryComponent implements OnInit {
     {id: 1, text: 'Entrada'},
     {id: 2, text: 'Saída'},
   ];
+
+  plate: string = 'BRA 0S21';
   public actions = [
     {text: 'Lavagem'},
     {text: 'Suporte de rua'},
@@ -30,8 +32,8 @@ export class ManualEntryComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-  }  
-    
+  }
+
   openDialog() {
     const dialogRef = this.dialog.open(DialogErrorComponent, {
       width: '330px',
@@ -43,7 +45,7 @@ export class ManualEntryComponent implements OnInit {
     });
   }
 
-  chooseDirection(){    
+  chooseDirection(){
     this.router.navigate(['/cancela/direction']);
   }
 

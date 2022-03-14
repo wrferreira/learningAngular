@@ -12,8 +12,6 @@
         <div class="margin">
           <app-plate *ngIf="plateFormControl.value.length <= 7" [plate]="plateFormControl.value"></app-plate>
           <app-chassi *ngIf="plateFormControl.value.length > 7" [plate]="plateFormControl.value"></app-chassi>
-
-          <!-- <app-chassi [plate]="plateFormControl.value"></app-chassi> -->
         </div>
         <div>
           <h2>Entre com a placa ou o chassi da moto: </h2>
@@ -21,6 +19,9 @@
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Placa/Chassi</mat-label>
               <input matInput placeholder="PLA8T12" [formControl]="plateFormControl" name="plate" (keyup)="valid()" maxlength="17">
+              <button *ngIf="plateFormControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
+                <mat-icon>close</mat-icon>
+              </button>
             </mat-form-field>
             <mat-error *ngIf="error !== ''" class="pb-2">
             {{ error }}
