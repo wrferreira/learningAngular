@@ -13,17 +13,7 @@ export class ErrorReadingComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    // console.log(this.plateFormControl);
-
-    // this.plateFormControl.get('plate').valueChanges.subscribe(x => {
-    //   // console.log(x.key);
-    //   this.plateComponent += x.key;
-    //   if (this.plateComponent.length == 3) {
-    //     this.plateComponent += ''
-    //   }
-    // })
-  }
+  ngOnInit(): void {}
 
   valid(){
     let plate = /[A-Za-z]{3}[0-9][A-Z0-9][0-9]{2}/;
@@ -35,6 +25,6 @@ export class ErrorReadingComponent implements OnInit {
     }
   }
   clear() {
-    // this.plateFormControl.reset()
+    this.plateFormControl.reset()
   }
 }

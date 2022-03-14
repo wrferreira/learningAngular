@@ -10,8 +10,8 @@
 
       <div class="alignment-row-center">
         <div class="margin">
-          <app-plate *ngIf="plateFormControl.value.length <= 7" [plate]="plateFormControl.value"></app-plate>
-          <app-chassi *ngIf="plateFormControl.value.length > 7" [plate]="plateFormControl.value"></app-chassi>
+          <app-plate *ngIf="plateFormControl.value?.length <= 7" [plate]="plateFormControl.value"></app-plate>
+          <app-chassi *ngIf="plateFormControl.value?.length > 7" [plate]="plateFormControl.value"></app-chassi>
         </div>
         <div>
           <h2>Entre com a placa ou o chassi da moto: </h2>
