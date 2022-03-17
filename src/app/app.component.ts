@@ -9,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'cancela';
 
-  constructor(private signalRService: SignalRService){        
+  constructor(private signalRService: SignalRService){
   }
 
   ngOnInit(): void {
-    this.signalRService.connect('123');
+    //this.signalRService.connect('123');
   }
 }

@@ -16,9 +16,17 @@
         </div>
         <span class="br margin">BR</span>
       </div>
-      <div class="number-plate-container alignment-row-center">
-        <span class="number-plate"> {{ plate.length > 0 ? plate : 'PLA 8T12'  }} </span>
+      <div class="number-plate-container alignment-column-center margin">
+        <div *ngIf="plate.length; else default">
+          <span class="number-plate"> {{ initialPlate }} </span> <br/>
+          <span class="number-plate"> {{ endPlate }} </span>
+        </div>
+        <ng-template #default>
+          <span class="number-plate">PLA</span> <br/>
+          <span class="number-plate">8T12</span>
+        </ng-template>
       </div>
+
     </div>
   </div>
 </div>

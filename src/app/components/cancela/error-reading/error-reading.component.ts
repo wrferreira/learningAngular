@@ -8,12 +8,22 @@ import { FormControl } from '@angular/forms';
 })
 export class ErrorReadingComponent implements OnInit {
   plateFormControl = new FormControl('')
-  plateComponent : string;
   error = ''
 
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // var myRe = new RegExp("d(b+)d", "g");
+    // var myArray = myRe.exec("cdbbdbsbz");
+
+    // this.plateFormControl.valueChanges.subscribe(value => {
+    //   console.log(value.match(/[a-zA-Z0-9]+/)['input']);
+
+    //   if (!value.match(/[a-zA-Z0-9]+/)['input']) {
+    //     this.plateFormControl.setValue(value.substring(0, value.length - 1))
+    //   }
+    // });
+  }
 
   valid(){
     let plate = /[A-Za-z]{3}[0-9][A-Z0-9][0-9]{2}/;
@@ -25,6 +35,6 @@ export class ErrorReadingComponent implements OnInit {
     }
   }
   clear() {
-    this.plateFormControl.reset()
+    this.plateFormControl.setValue("")
   }
 }

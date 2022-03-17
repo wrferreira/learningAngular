@@ -8,12 +8,15 @@ import { Component, Input, OnChanges, OnInit, Output, SimpleChanges } from '@ang
 export class PlateComponent implements OnInit, OnChanges{
 
   @Input () plate : String;
+  initialPlate: String;
+  endPlate: String;
 
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.plate) {
-      console.log(changes.plate);
+      this.endPlate = this.plate.slice(3, this.plate.length)
+      this.initialPlate = this.plate.slice(0, 3)
     }
   }
 
