@@ -13,16 +13,9 @@ export class ErrorReadingComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // var myRe = new RegExp("d(b+)d", "g");
-    // var myArray = myRe.exec("cdbbdbsbz");
-
-    // this.plateFormControl.valueChanges.subscribe(value => {
-    //   console.log(value.match(/[a-zA-Z0-9]+/)['input']);
-
-    //   if (!value.match(/[a-zA-Z0-9]+/)['input']) {
-    //     this.plateFormControl.setValue(value.substring(0, value.length - 1))
-    //   }
-    // });
+    this.plateFormControl.valueChanges.subscribe(value => {
+      if (/\W|_/.test(value)) this.plateFormControl.setValue(value.substring(0, value.length - 1))
+    });
   }
 
   valid(){
