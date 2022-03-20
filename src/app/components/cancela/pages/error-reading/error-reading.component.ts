@@ -8,12 +8,15 @@ import { FormControl } from '@angular/forms';
 })
 export class ErrorReadingComponent implements OnInit {
   plateFormControl = new FormControl('')
-  plateComponent : string;
   error = ''
 
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.plateFormControl.valueChanges.subscribe(value => {
+      if (/\W|_/.test(value)) this.plateFormControl.setValue(value.substring(0, value.length - 1))
+    });
+  }
 
   valid(){
     let plate = /[A-Za-z]{3}[0-9][A-Z0-9][0-9]{2}/;
@@ -25,6 +28,6 @@ export class ErrorReadingComponent implements OnInit {
     }
   }
   clear() {
-    this.plateFormControl.reset()
+    this.plateFormControl.setValue("")
   }
 }
