@@ -7,7 +7,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f5f5f5;
+  //background-color: #f5f5f5;
+  background-color: rgb(0, 0, 0, 90%);
   flex-direction: column;
 }
 
@@ -24,11 +25,13 @@
   font-size: 23px;
   font-weight: 400;
   text-align: center;
+  color: #fff;
 }
 
 .waiting {
   font-size: 18px;
   text-align: center;
+  color: #fff;
 }
 .size {
   width: 100px;

@@ -7,7 +7,7 @@ import { environment } from "src/environments/environment";
 })
 export class SignalRService {
 
-    private baseUrl = environment.baseUrl;
+    private baseUrlMonitor = environment.baseUrlMonitor;
     private hubConnectionMonitor: HubConnection;
 
     connect(token){
@@ -18,7 +18,7 @@ export class SignalRService {
         };
 
         let builder = new HubConnectionBuilder();
-        this.hubConnectionMonitor = builder.withUrl(this.baseUrl + 'usuarioSuporte', options).build();
+        this.hubConnectionMonitor = builder.withUrl(this.baseUrlMonitor + 'usuarioSuporte', options).build();
 
         this.hubConnectionMonitor.on('Logout', (param: any) => {
             console.log(param);            
