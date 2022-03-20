@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-error-reading',
-  templateUrl: './error-reading.component.html',
-  styleUrls: ['./error-reading.component.scss']
+  selector: 'app-reading-error',
+  templateUrl: './reading-error.component.html',
+  styleUrls: ['./reading-error.component.scss']
 })
-export class ErrorReadingComponent implements OnInit {
-  plateFormControl = new FormControl('')
-  error = ''
+export class ReadingErrorComponent implements OnInit {
+  public plateFormControl = new FormControl('')
+  public error:string = ''
 
   constructor() { }
 
@@ -19,13 +19,11 @@ export class ErrorReadingComponent implements OnInit {
   }
 
   valid(){
-    let plate = /[A-Za-z]{3}[0-9][A-Z0-9][0-9]{2}/;
+    const plate = /[A-Za-z]{3}[0-9][A-Z0-9][0-9]{2}/;
     if(plate.test(this.plateFormControl.value) && this.plateFormControl.value.length == 7 || this.plateFormControl.value.length == 17){
       this.error = "";
     }
-    else {
-      this.plateFormControl.value.length >= 8 ? this.error = "Chassi inválido" : this.error = "Placa inválida";
-    }
+    else this.error = this.plateFormControl.value.length >= 8 ?  "Chassi inválido" : "Placa inválida";    
   }
   clear() {
     this.plateFormControl.setValue("")

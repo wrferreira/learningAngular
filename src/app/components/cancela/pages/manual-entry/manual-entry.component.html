@@ -1,37 +1,53 @@
 <mat-card class="initial-card">
-    <div class="card-logo">
-      <img mat-card-image src="/assets/img/novo-logo@2x.png" alt="">
-    </div>
-    <div class="content">
-      <div class="info">
-        <h1>Detalhes da moto</h1>
-        <span>Placa: <b>EAI-2E19</b></span>
-        <span>Situação: <b>Pronta pra aluguel</b></span>
-        <span>Chassi: <b>WERTYUCVBNHJKVBNMGHJFGHJK</b></span>
-        <div class="plate-component">
+  <div class="card-logo">
+    <img mat-card-image src="/assets/img/novo-logo@2x.png" alt="">
+  </div>
+  <div class="content">
+    <div class="info">
+      <h1>Detalhes da moto</h1>
+      <span>Placa: <b>EAI-2E19</b></span>
+      <span>Situação: <b>Pronta pra aluguel</b></span>
+      <span>Chassi: <b>WERTYUCVBNHJKVBNMGHJFGHJK</b></span>
+      <div class="size">
+          <mat-carousel
+          timings="200ms ease-in"
+          [autoplay]="true"
+          interval="4000"
+          [loop]="true"
+          [useMouseWheel]="true"
+          [hideIndicators]="true"
+          [useKeyboard]="true"
+          height="100%"
+        >
+        <mat-carousel-slide>
           <app-plate *ngIf="plate.length <= 7" [plate]="plate"></app-plate>
           <app-chassi *ngIf="plate.length > 7" [plate]="plate"></app-chassi>
-        </div>
+        </mat-carousel-slide>
+        <mat-carousel-slide>
+          <img class="img-info" src="/assets/img/placa.jpg">
+        </mat-carousel-slide>
+        <mat-carousel-slide>
+          <img class="img-info" src="/assets/img/assinatura.jpg">
+        </mat-carousel-slide>
+        </mat-carousel>
       </div>
-      <div class="alignment">
-        <div class="alignment-column">
-          <h2> {{ type === 1 ? 'Selecione o motivo da sua entrada' : 'Selecione o motivo da sua saída'}} </h2>
-          <div class="actions">
-            <div *ngFor="let action of actions" class="actions-btn alignment-column" [style.background]="action.color">
-              <div class="actions-btn-container" (click)="openDialog()">
-                <div class="actions-btn-text">
-                  <span>{{action.text}}</span>
-                </div>
-                <div class="contents">
-                  <div class="inner"></div>
-                </div>
+    </div>
+    <div class="alignment">
+      <div class="alignment-column">
+        <h2> Selecione a direção </h2>
+        <div class="actions">
+          <div *ngFor="let direction of directions" class="actions-btn alignment-column" [style.background]="direction.color">
+            <div class="actions-btn-container" (click)="chooseDirection(direction.id)">
+              <div class="actions-btn-text">
+                <span>{{direction.text}}</span>
+              </div>
+              <div class="contents">
+                <div class="inner"></div>
               </div>
             </div>
           </div>
-          <div class="alignment-start back-icon" (click)="chooseDirection()">
-            <mat-icon aria-hidden="false" aria-label="icon">arrow_back</mat-icon>
-          </div>
         </div>
       </div>
     </div>
-  </mat-card>
+  </div>
+</mat-card>
