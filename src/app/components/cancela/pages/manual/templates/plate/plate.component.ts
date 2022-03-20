@@ -7,9 +7,9 @@ import { Component, Input, OnChanges, OnInit, Output, SimpleChanges } from '@ang
 })
 export class PlateComponent implements OnInit, OnChanges{
 
-  @Input () plate : String;
-  initialPlate: String;
-  endPlate: String;
+  @Input () plate: string;
+  public initialPlate: string;
+  public endPlate: string;
 
   constructor() { }
 

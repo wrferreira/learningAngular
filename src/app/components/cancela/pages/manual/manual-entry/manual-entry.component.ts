@@ -13,8 +13,12 @@ export class ManualEntryComponent implements OnInit {
     {id: 1, text: 'Entrada'},
     {id: 2, text: 'Saída'},
   ];
-
-  plate: string = 'BRA 0S21';
+  public veiculo = {
+    placa: 'EAI-2E19',
+    situacao: 'Pronta pra aluguel',
+    chassi: 'WERTYUCVBNHJKVBNMGHJFGHJK'
+  }
+  //plate: string = 'BRA 0S21';
 
   constructor(
     private router: Router

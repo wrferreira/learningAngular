@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogSuccessComponent } from '../dialogs/success/dialog-success.component';
-import { DialogErrorComponent } from '../dialogs/error/dialog-error.component';
+import { DialogErrorComponent } from '../../dialogs/error/dialog-error.component';
+
 
 @Component({
   selector: 'app-manual-options',
@@ -46,7 +46,7 @@ export class ManualOptionsComponent implements OnInit {
   }
 
   chooseDirection(){
-    this.router.navigate(['/cancela/direction']);
+    this.router.navigate(['/cancela/manual']);
   }
 
 }

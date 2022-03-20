@@ -1,7 +1,7 @@
 import { DialogSuccessComponent } from './pages/dialogs/success/dialog-success.component';
-import { ManualOptionsComponent } from './pages/manual-options/manual-options.component';
+import { ManualOptionsComponent } from './pages/manual/manual-options/manual-options.component';
 import { ReadingErrorComponent } from './pages/reading-error/reading-error.component';
-import { ManualEntryComponent } from './pages/manual-entry/manual-entry.component';
+import { ManualEntryComponent } from './pages/manual/manual-entry/manual-entry.component';
 import { InitialComponent } from './pages/initial/initial.component';
 import { LoadingComponent } from './pages/loading/loading.component';
 import { NgModule } from '@angular/core';
