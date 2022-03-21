@@ -3,35 +3,7 @@
     <img mat-card-image src="/assets/img/novo-logo@2x.png" alt="">
   </div>
   <div class="content">
-    <div class="info">
-      <h1>Detalhes da moto</h1>
-      <span>Placa: <b>{{ veiculo.placa }}</b></span>
-      <span>Situação: <b>{{ veiculo.situacao }}</b></span>
-      <span>Chassi: <b>{{ veiculo.chassi }}</b></span>
-      <div class="size">
-          <mat-carousel
-          timings="200ms ease-in"
-          [autoplay]="true"
-          interval="4000"
-          [loop]="true"
-          [useMouseWheel]="true"
-          [hideIndicators]="true"
-          [useKeyboard]="true"
-          height="100%"
-        >
-        <mat-carousel-slide>
-          <app-plate *ngIf="veiculo.placa.length <= 7" [plate]="veiculo.placa"></app-plate>
-          <app-chassi *ngIf="veiculo.placa.length > 7" [plate]="veiculo.placa"></app-chassi>
-        </mat-carousel-slide>
-        <mat-carousel-slide>
-          <img class="img-info" src="/assets/img/placa.jpg">
-        </mat-carousel-slide>
-        <mat-carousel-slide>
-          <img class="img-info" src="/assets/img/assinatura.jpg">
-        </mat-carousel-slide>
-        </mat-carousel>
-      </div>
-    </div>
+    <app-details-motorcycle></app-details-motorcycle>
     <div class="alignment">
       <div class="alignment-column">
         <h2> Selecione a direção </h2>

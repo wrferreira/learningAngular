@@ -3,7 +3,8 @@
       <img mat-card-image src="/assets/img/novo-logo@2x.png" alt="">
     </div>
     <div class="content">
-      <div class="info">
+      <app-details-motorcycle [onlyPlate]="true"></app-details-motorcycle>
+      <!-- <div class="info">
         <h1>Detalhes da moto</h1>
         <span>Placa: <b>EAI-2E19</b></span>
         <span>Situação: <b>Pronta pra aluguel</b></span>
@@ -12,7 +13,7 @@
           <app-plate *ngIf="plate.length <= 7" [plate]="plate"></app-plate>
           <app-chassi *ngIf="plate.length > 7" [plate]="plate"></app-chassi>
         </div>
-      </div>
+      </div> -->
       <div class="alignment">
         <div class="alignment-column">
           <h2> {{ type === 1 ? 'Selecione o motivo da sua entrada' : 'Selecione o motivo da sua saída'}} </h2>

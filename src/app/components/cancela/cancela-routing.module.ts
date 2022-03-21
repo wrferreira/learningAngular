@@ -7,19 +7,20 @@ import { LoadingComponent } from './pages/loading/loading.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CancelaComponent } from './cancela.component';
+import { ReadingSuccessComponent } from './pages/reading-success/reading-success.component';
 
 
 const routes: Routes = [
   {
-    path: '', 
+    path: '',
     component: CancelaComponent,
     children: [
       {
         path: '', component: InitialComponent
       },
-      { 
+      {
         path:'loading', component: LoadingComponent
-      }, 
+      },
       {
         path: 'manual', component: ManualEntryComponent
       },
@@ -31,6 +32,9 @@ const routes: Routes = [
       },
       {
         path: 'success', component: DialogSuccessComponent
+      },
+      {
+        path: 'released', component: ReadingSuccessComponent
       }
     ]
   }

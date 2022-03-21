@@ -1,0 +1,99 @@
+.initial-card {
+  box-shadow: none;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.card-logo {
+  width: 100%;
+  background: #fafafa;
+  box-shadow: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 0 1em #ccc;
+}
+
+.card-logo img {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  margin-left: 20px;
+}
+
+.content {
+  display: flex;
+  height: calc(100% - 70px);
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon-check {
+  color: #00b131;
+  font-size: 140px;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8%;
+}
+
+.content-dialog {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.icon-dialog {
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+.text {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.redirect {
+  font-size: 22px;
+}
+
+.align-text {
+  text-align: center;
+}
+
+.size {
+  width: 50%;
+  margin-bottom: 4%;
+}
+
+.pulse {
+  animation: pulse 0.7s infinite;
+  animation-direction: alternate;
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}

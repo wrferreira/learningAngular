@@ -15,6 +15,8 @@ import { ManualOptionsComponent } from './pages/manual/manual-options/manual-opt
 import { PlateComponent } from './pages/manual/templates/plate/plate.component';
 import { ChassiComponent } from './pages/manual/templates/chassi/chassi.component';
 import { MaterialModule } from 'src/app/material/material.module';
+import { DetailsMotorcycleComponent } from './pages/details-motorcycle/details-motorcycle.component';
+import { ReadingSuccessComponent } from './pages/reading-success/reading-success.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ import { MaterialModule } from 'src/app/material/material.module';
     ReadingErrorComponent,
     ManualOptionsComponent, 
     PlateComponent, 
-    ChassiComponent
+    ChassiComponent, DetailsMotorcycleComponent, ReadingSuccessComponent
   ],
   imports: [
     CommonModule,

@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dialog-success.component.scss']
 })
 export class DialogSuccessComponent implements OnInit {
-  
+
   constructor() { }
 
   ngOnInit(): void {}
-  
+
 }
