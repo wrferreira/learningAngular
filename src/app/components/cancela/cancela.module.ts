@@ -29,7 +29,9 @@ import { ReadingSuccessComponent } from './pages/reading-success/reading-success
     ReadingErrorComponent,
     ManualOptionsComponent, 
     PlateComponent, 
-    ChassiComponent, DetailsMotorcycleComponent, ReadingSuccessComponent
+    ChassiComponent, 
+    DetailsMotorcycleComponent, 
+    ReadingSuccessComponent
   ],
   imports: [
     CommonModule,

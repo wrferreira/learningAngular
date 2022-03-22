@@ -5,12 +5,10 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: 'cancela', loadChildren: () => import('./components/cancela/cancela.module').then(m => m.CancelaModule)
-  },
-  /*
+  },  
   { 
     path: 'login', loadChildren: () => import('./components/login/login.module').then(m => m.LoginModule) 
-  },
-  */
+  },  
   {
     path: '**', redirectTo: 'cancela'
   }

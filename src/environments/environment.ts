@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  baseUrlMonitor: 'http://localhost:5000/'
+  baseUrlMottu: 'http://localhost:5000/',
+  //signalR: 'http://localhost:3523/cancelaHub'
+  //signalR: 'http://6af4-2804-14c-bbad-4eb9-2132-756c-4616-f966.sa.ngrok.io/cancelaHub'
 };
 
 /*

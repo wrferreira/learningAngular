@@ -7,39 +7,54 @@ import { environment } from "src/environments/environment";
 })
 export class SignalRService {
 
-    private baseUrlMonitor = environment.baseUrlMonitor;
-    private hubConnectionMonitor: HubConnection;
+  private baseUrl = environment.signalR;
+  private hubConnectionMonitor: HubConnection;
+  
+  connect(){
+    let builder = new HubConnectionBuilder();
+    this.hubConnectionMonitor = builder.withUrl(this.baseUrl).build();
+    this.hubConnectionMonitor.start()
 
-    connect(token){
-        const options: IHttpConnectionOptions = {
-            accessTokenFactory: () => {
-                return token;
-            }
-        };
+    this.hubConnectionMonitor.on('DadosCancela', (param: any) => {
+      console.log('DadosCancela', param);
+    });
 
-        let builder = new HubConnectionBuilder();
-        this.hubConnectionMonitor = builder.withUrl(this.baseUrlMonitor + 'usuarioSuporte', options).build();
+    this.hubConnectionMonitor.on('RequestEvent', (param: any) => {
+      console.log('RequestEvent', param);
+    });
 
-        this.hubConnectionMonitor.on('Logout', (param: any) => {
-            console.log(param);            
-        });
+    this.hubConnectionMonitor.on('ResponseEvent', (param: any) => {
+      console.log('ResponseEvent', param);
+    });
 
-        this.startConnection(token);
-    }
+    this.hubConnectionMonitor.on('CancelaAbrindo', (param: any) => {
+      console.log('CancelaAbrindo', param);
+    });
 
-    async startConnection(token: string) {
-        await this.hubConnectionMonitor
-        .start()
-        .then(() => {
-            this.hubConnectionMonitor.send("Subscribe", token);
-        })
-        .catch(() => {
-            setTimeout(function() { this.startConnectionMonitor(); }, 5000);
-        });
-    }
+    this.hubConnectionMonitor.on('CancelaFechada', (param: any) => {
+      console.log('CancelaFechada', param);
+    });
 
-    disconnect(){
-        if(this.hubConnectionMonitor) 
-            this.hubConnectionMonitor.stop();
-    }
+    
+  }
+
+  abrirCancela(){
+    this.hubConnectionMonitor.send('AbreCancela').then(result => console.log('AbreCancela: ', result))
+  }
+
+  // async startConnection(token: string) {
+  //   await this.hubConnectionMonitor
+  //   .start()
+  //   .then(() => {
+  //     this.hubConnectionMonitor.send("Subscribe", token);
+  //   })
+  //   .catch(() => {
+  //     setTimeout(function() { this.startConnectionMonitor(token); }, 5000);
+  //   });
+  // }
+
+  disconnect(){
+    if(this.hubConnectionMonitor) 
+      this.hubConnectionMonitor.stop();
+  }
 }

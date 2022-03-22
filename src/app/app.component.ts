@@ -13,6 +13,10 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.signalRService.connect('123');
+    this.signalRService.connect();
+
+    setTimeout(() => {
+      this.signalRService.abrirCancela();
+    }, 6000);
   }
 }

@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
-  private baseUrlMonitor = environment.baseUrlMonitor;
+  private baseUrlMottu = environment.baseUrlMottu;
 
   constructor(
     private router: Router,
@@ -18,7 +18,7 @@ export class AuthService {
   ) { }
 
   login(user: any) {
-    return this.http.post(this.baseUrlMonitor + 'api/v1/IAM/authentication', user).pipe(map((response: BaseRequestResult<any>) => {          
+    return this.http.post(this.baseUrlMottu + 'api/v1/IAM/authentication', user).pipe(map((response: BaseRequestResult<any>) => {          
       if (response.dataResult) {
         localStorage.setItem('currentUser', JSON.stringify(response));
         this.router.navigate(['/cancela']);

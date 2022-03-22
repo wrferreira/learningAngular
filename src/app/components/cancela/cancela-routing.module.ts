@@ -31,10 +31,7 @@ const routes: Routes = [
         path: 'readingerror', component: ReadingErrorComponent
       },
       {
-        path: 'success', component: DialogSuccessComponent
-      },
-      {
-        path: 'released', component: ReadingSuccessComponent
+        path: 'successful', component: ReadingSuccessComponent
       }
     ]
   }
