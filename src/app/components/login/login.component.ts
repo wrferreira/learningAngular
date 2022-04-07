@@ -12,8 +12,8 @@ export class LoginComponent implements OnInit {
   public passwordType:string = 'password';
   public showLoader: boolean = false;
   public form:FormGroup = new FormGroup({
-    login: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
+    senha: new FormControl('', Validators.required),
   });
 
   constructor(

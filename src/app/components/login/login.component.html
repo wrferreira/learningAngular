@@ -9,12 +9,12 @@
             <form [formGroup]="form">
                 <div class="email-input-ctn" >
                     <label for="">Seu email</label>
-                    <input type="text" placeholder="Seu E-mail" class="input-email" formControlName="login">
+                    <input type="text" placeholder="Seu E-mail" class="input-email" formControlName="email">
                 </div>
                 <br>
                 <div class="password-input-ctn" >
                     <label for="">Sua senha</label>
-                    <input type="{{passwordType}}" placeholder="Senha" class="password-input" formControlName="password">
+                    <input type="{{passwordType}}" placeholder="Senha" class="password-input" formControlName="senha">
                     <mat-icon (click)="setPasswordView()" class="showPassword">
                         {{ passwordType == 'text' ? 'visibility' : 'visibility_off' }}
                     </mat-icon>

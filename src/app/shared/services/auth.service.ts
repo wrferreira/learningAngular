@@ -18,7 +18,7 @@ export class AuthService {
   ) { }
 
   login(user: any) {
-    return this.http.post(this.baseUrlMottu + 'api/v1/IAM/authentication', user).pipe(map((response: BaseRequestResult<any>) => {          
+    return this.http.post(this.baseUrlMottu + 'api/v2/usuario/AutenticarPorEmail', user).pipe(map((response: BaseRequestResult<any>) => {
       if (response.dataResult) {
         localStorage.setItem('currentUser', JSON.stringify(response));
         this.router.navigate(['/cancela']);
