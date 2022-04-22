@@ -7,7 +7,7 @@ import { Component, Input, OnChanges, OnInit, Output, SimpleChanges } from '@ang
 })
 export class PlateComponent implements OnInit, OnChanges{
 
-  @Input () plate: string;
+  @Input() plate: string;
   public initialPlate: string;
   public endPlate: string;
 
@@ -23,5 +23,4 @@ export class PlateComponent implements OnInit, OnChanges{
   ngOnInit(): void {
 
   }
-
 }

@@ -1,8 +1,9 @@
 <div class="info">
-  <h1>Detalhes da moto</h1>
-  <span>Placa: <b>{{ veiculo.placa }}</b></span>
-  <span>Situação: <b>{{ veiculo.situacao }}</b></span>
-  <span>Chassi: <b>{{ veiculo.chassi }}</b></span>
+  <h1>Detalhes</h1>  
+  <span>Placa: <b>{{ dataVehicle?.placa }}</b></span>
+  <span>Situação: <b>{{ veiculoSituacao[dataVehicle?.veiculoSituacao] }}</b></span>
+  <span>Chassi: <b>{{ dataVehicle?.chassi }}</b></span>
+  <span>Cliente: <b>{{ cancelaResponseEvt?.clienteNome }}</b></span>
   <div class="size" >
     <mat-carousel *ngIf="!onlyPlate; else only"
       timings="200ms ease-in"
@@ -15,20 +16,23 @@
       height="100%"
     >
       <mat-carousel-slide>
-        <app-plate *ngIf="veiculo.placa.length <= 7" [plate]="veiculo.placa"></app-plate>
-        <app-chassi *ngIf="veiculo.placa.length > 7" [plate]="veiculo.placa"></app-chassi>
+        <app-plate *ngIf="dataVehicle?.placa?.length <= 7" [plate]="dataVehicle?.placa"></app-plate>
+        <app-chassi *ngIf="dataVehicle?.placa?.length > 7" [plate]="dataVehicle?.placa"></app-chassi>
       </mat-carousel-slide>
       <mat-carousel-slide>
-        <img class="img-info" src="/assets/img/placa.jpg">
+        <img class="img-info" src="https://prod-backendop.mottu.dev/s3/download/mottu-usuario/{{ dataVehicle?.assinatura }}">
       </mat-carousel-slide>
       <mat-carousel-slide>
-        <img class="img-info" src="/assets/img/assinatura.jpg">
+        <img class="img-info" src="https://prod-backendop.mottu.dev/s3/download/mottu-usuario/{{ dataVehicle?.usuarioCnh }}">
+      </mat-carousel-slide>
+      <mat-carousel-slide *ngIf="cancelaResponseEvt?.placaUrl">
+        <img class="img-info" src="https://prod-backendop.mottu.dev/s3/download/mottu-usuario/{{ cancelaResponseEvt?.placaUrl }}">
       </mat-carousel-slide>
     </mat-carousel>
     <ng-template #only>
-      <div  class="plate-component">
-        <app-plate *ngIf="veiculo.placa.length <= 7" [plate]="veiculo.placa"></app-plate>
-        <app-chassi *ngIf="veiculo.placa.length > 7" [plate]="veiculo.placa"></app-chassi>
+      <div class="plate-component">                
+        <app-plate *ngIf="dataVehicle?.placa?.length <= 7" [plate]="dataVehicle?.placa"></app-plate>
+        <app-chassi *ngIf="dataVehicle?.placa?.length > 7" [plate]="dataVehicle?.placa"></app-chassi>
       </div>
     </ng-template>
   </div>

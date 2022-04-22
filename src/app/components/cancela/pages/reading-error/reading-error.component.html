@@ -1,7 +1,4 @@
-<mat-card class="initial-card">
-  <div class="card-logo">
-    <img mat-card-image src="/assets/img/novo-logo@2x.png" alt="">
-  </div>
+<mat-card class="initial-card">  
   <div class="content">
     <div class="info">
       <mat-icon class="icon-dissatisfied">report</mat-icon>
@@ -9,16 +6,16 @@
 
       <div class="alignment-row-center">
         <div class="margin">
-          <app-plate *ngIf="plateFormControl.value?.length <= 7" [plate]="plateFormControl.value"></app-plate>
-          <app-chassi *ngIf="plateFormControl.value?.length > 7" [plate]="plateFormControl.value"></app-chassi>
+          <app-plate *ngIf="plateFormControl.value?.length <= placaLength" [plate]="plateFormControl.value"></app-plate>
+          <app-chassi *ngIf="plateFormControl.value?.length > placaLength" [plate]="plateFormControl.value"></app-chassi>
         </div>
         <div>
           <h2>Entre com a placa ou o chassi da moto: </h2>
-          <form class="plate alignment-column">
+          <form class="plate alignment-column" (ngSubmit)="sendPlate()">
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Placa/Chassi</mat-label>
-              <input matInput placeholder="PLA8T12" [formControl]="plateFormControl" name="plate" (keyup)="valid()" maxlength="17">
-              <button *ngIf="plateFormControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
+              <input matInput placeholder="PLA8T12" [formControl]="plateFormControl" name="plate" maxlength="17">
+              <button *ngIf="plateFormControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="reset()">
                 <mat-icon>close</mat-icon>
               </button>
             </mat-form-field>
@@ -34,3 +31,7 @@
     </div>
   </div>
 </mat-card>
+
+<div *ngIf="showLoading" class="loader-ctn">
+  <mat-spinner></mat-spinner>
+</div>

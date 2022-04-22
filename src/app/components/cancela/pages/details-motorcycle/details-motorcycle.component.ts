@@ -1,4 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CancelaLastRegister, CancelaResponseEvent } from 'src/app/shared/models/Cancela.model';
+import {ChangeDetectorRef } from '@angular/core';
+import { SignalRService } from 'src/app/shared/services/signalR.service';
+import { VeiculoSituacao } from 'src/app/shared/enum/veiculo.enum';
 
 @Component({
   selector: 'app-details-motorcycle',
@@ -7,21 +11,28 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DetailsMotorcycleComponent implements OnInit {
 
-  @Input () onlyPlate: boolean = false;
+  @Input() onlyPlate: boolean = false;
+  @Input() dataVehicle:CancelaLastRegister;
+  public placaLength = 7;
+  public veiculoSituacao = VeiculoSituacao
+  public cancelaResponseEvt: CancelaResponseEvent
 
   public directions = [
     {id: 1, text: 'Entrada'},
     {id: 2, text: 'Saída'},
-  ];
-  public veiculo = {
-    placa: 'EAI2E19',
-    situacao: 'Pronta pra aluguel',
-    chassi: 'WERTYUCVBNHJKVBNMGHJFGHJK'
-  }
+  ];  
 
-  constructor() { }
+  constructor(
+    private cd: ChangeDetectorRef,
+    private signalRService: SignalRService
+  ) { }
 
   ngOnInit(): void {
+    console.log(this.dataVehicle)
+    this.cancelaResponseEvt = this.signalRService.cancelaResponse
   }
-
+  
+  ngAfterContentChecked() {
+    this.cd.detectChanges();
+  }
 }

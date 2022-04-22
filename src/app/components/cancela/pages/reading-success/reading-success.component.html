@@ -1,19 +1,24 @@
-<mat-card class="initial-card">
-  <div class="card-logo">
-    <img mat-card-image src="/assets/img/novo-logo@2x.png" alt="">
-  </div>
+<mat-card class="initial-card" *ngIf="!showLoading">  
   <div class="content">
-    <app-details-motorcycle></app-details-motorcycle>
+    <app-details-motorcycle [dataVehicle]="dataVehicle"></app-details-motorcycle>
     <div class="alignment size">
       <div class="icon-dialog">
-        <mat-icon class="icon-check pulse">check_circle_outline</mat-icon>
+        <mat-icon class="icon-check pulse" [ngClass]="infoConsulta.status">{{ infoConsulta.icon }}</mat-icon>
       </div>
       <div>
-        <h3 class="text">Tudo certo!</h3>
-        <div class="align-text">
-          <span class="redirect">Cancela liberada</span>
+        <h3 class="text">{{ infoConsulta.title }}</h3>
+        <h5 class="message">{{ infoConsulta.message }}</h5>
+        <div class="errors" *ngIf="infoConsulta.listaErros.length">
+          <span>Observações:</span>
+          <ul>
+            <li class="redirect" *ngFor="let err of infoConsulta.listaErros">{{ err }}</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 </mat-card>
+
+<div *ngIf="showLoading" class="loader-ctn">
+  <mat-spinner></mat-spinner>
+</div>

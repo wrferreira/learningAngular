@@ -19,10 +19,9 @@
                         {{ passwordType == 'text' ? 'visibility' : 'visibility_off' }}
                     </mat-icon>
                 </div>                
-                <button (click)="login()" mat-button class="login-btn"
-                    [ngClass]="{'enabled': form.status == 'VALID'}">
-                    <span *ngIf="!showLoader">FAZER LOGIN</span>
+                <button (click)="login()" mat-button class="login-btn">
                     <mat-spinner *ngIf="showLoader" diameter="20"></mat-spinner>
+                    <span class="login-text">LOGIN</span>
                 </button>
             </form>
         </mat-card-content>

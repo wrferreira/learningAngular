@@ -11,19 +11,24 @@ import { map } from 'rxjs/operators';
 export class AuthService {
 
   private baseUrlMottu = environment.baseUrlMottu;
-
+  
   constructor(
     private router: Router,
     private http: HttpClient,
   ) { }
 
+  get currentUser(){
+    return JSON.parse(localStorage.getItem('currentUser'));
+  }
+
   login(user: any) {
-    return this.http.post(this.baseUrlMottu + 'api/v2/usuario/AutenticarPorEmail', user).pipe(map((response: BaseRequestResult<any>) => {
-      if (response.dataResult) {
-        localStorage.setItem('currentUser', JSON.stringify(response));
-        this.router.navigate(['/cancela']);
-      }
-      return response;
+    return this.http.post(this.baseUrlMottu + 'api/v2/usuario/AutenticarPorEmail', user)
+      .pipe(map((response: BaseRequestResult<any>) => {
+        if (response.dataResult) {
+          localStorage.setItem('currentUser', JSON.stringify(response));
+          this.router.navigate(['/cancela']);
+        }
+        return response;
     }));
   }
 

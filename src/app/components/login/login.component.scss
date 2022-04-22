@@ -53,19 +53,21 @@ form {
   position: relative;
 }
 
+
 .login-btn {
   background-color: #00b131;
   color: #fff;
   border-radius: 20px;
-  position: absolute;
-  right: 55px;
-  bottom: -50px;
-  height: 34px;
-  width: 128px;
-  display: flex;
+  // position: absolute;
+  // right: 55px;
+  // bottom: -50px;
+  // height: 34px;
+  width: 150px;
+  // display: flex;
   justify-content: center;
-  align-items: center;
-  font-weight: bold;
+}
+.login-text {
+  justify-content: center;
 }
 
 .email-input-ctn {
@@ -108,5 +110,12 @@ form {
   }
 }
 
+.login-btn ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #fff;
+}
+::ng-deep .mat-button-wrapper {
+  display: flex;
+  align-items: center;  
+}
   
   

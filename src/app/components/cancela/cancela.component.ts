@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-cancela',
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
 export class CancelaComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private authService: AuthService    
   ) { }
 
   @HostListener('document:keydown', ['$event'])
@@ -25,5 +27,7 @@ export class CancelaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  logout(){
+    this.authService.logout();
+  }
 }
