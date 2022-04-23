@@ -47,7 +47,7 @@ mat-form-field {
   width: 350px;
 }
 section {
-  margin-top: 30px;
+  margin-top: 60px;
   display: grid;
   justify-content: center;
 
@@ -69,6 +69,13 @@ section {
 }
 .margin {
   margin-right: 30px;
+}
+
+
+@media (max-width: 1280px) {
+  section {
+    margin-top: 30px;
+  }
 }
 
 //   .text {
