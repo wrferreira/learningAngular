@@ -1,7 +1,7 @@
 <mat-card class="blank">
-  <!-- <div class="card-logo">
+  <div class="card-logo" *ngIf="displayHeader">
     <img mat-card-image src="/assets/img/novo-logo@2x.png" alt="">
     <button (click)="logout()">Logout</button>
-  </div> -->
-  <router-outlet></router-outlet>  
+  </div>
+  <router-outlet (activate)="activatedRoute($event)"></router-outlet>  
 </mat-card>

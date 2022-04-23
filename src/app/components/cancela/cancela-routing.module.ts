@@ -4,7 +4,7 @@ import { ManualOptionsComponent } from './pages/cancela-servico/manual-options/m
 import { ReadingErrorComponent } from './pages/reading-error/reading-error.component';
 import { ManualEntryComponent } from './pages/cancela-servico/manual-entry/manual-entry.component';
 import { ReadingSuccessComponent } from './pages/reading-success/reading-success.component';
-import { InitialComponent } from './pages/initial/initial.component';
+import { IdleComponent } from './pages/idle/idle.component';
 import { LoadingComponent } from './pages/loading/loading.component';
 import { CancelaComponent } from './cancela.component';
 
@@ -15,7 +15,7 @@ const routes: Routes = [
     component: CancelaComponent,
     children: [
       {
-        path: '', component: InitialComponent
+        path: '', component: IdleComponent
       },
       {
         path:'loading', component: LoadingComponent

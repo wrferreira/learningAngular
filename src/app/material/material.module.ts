@@ -8,7 +8,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 const MODULES = [
   MatCardModule,
   MatGridListModule,
@@ -19,6 +19,7 @@ const MODULES = [
   MatInputModule,
   MatButtonModule,
   MatProgressSpinnerModule,
+  MatButtonToggleModule
 ]
 
 @NgModule({

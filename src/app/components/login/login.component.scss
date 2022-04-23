@@ -58,16 +58,13 @@ form {
   background-color: #00b131;
   color: #fff;
   border-radius: 20px;
-  // position: absolute;
-  // right: 55px;
-  // bottom: -50px;
-  // height: 34px;
+  margin-top: 15px;
   width: 150px;
-  // display: flex;
   justify-content: center;
 }
 .login-text {
   justify-content: center;
+  width: 100%;
 }
 
 .email-input-ctn {
@@ -95,6 +92,7 @@ form {
   width: 260px;
   position: relative;
   text-align: start;
+
   .password-input {
     background-color: #202722;
     color: #fff;
@@ -113,7 +111,7 @@ form {
 .login-btn ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
   stroke: #fff;
 }
-::ng-deep .mat-button-wrapper {
+:host::ng-deep .mat-button-wrapper {
   display: flex;
   align-items: center;  
 }

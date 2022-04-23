@@ -5,7 +5,7 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 import { CancelaRoutingModule } from './cancela-routing.module';
 import { CancelaComponent } from './cancela.component';
-import { InitialComponent } from './pages/initial/initial.component';
+import { IdleComponent } from './pages/idle/idle.component';
 import { LoadingComponent } from './pages/loading/loading.component';
 import { DialogSuccessComponent } from './pages/dialogs/success/dialog-success.component';
 import { DialogErrorComponent } from './pages/dialogs/error/dialog-error.component';
@@ -21,7 +21,7 @@ import { ReadingSuccessComponent } from './pages/reading-success/reading-success
 @NgModule({
   declarations: [
     CancelaComponent,
-    InitialComponent,
+    IdleComponent,
     LoadingComponent,
     ManualEntryComponent,
     DialogSuccessComponent,

@@ -1,5 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
@@ -9,24 +8,19 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class CancelaComponent implements OnInit {
 
-  constructor(
-    private router: Router,
-    private authService: AuthService    
-  ) { }
+  public displayHeader:boolean;
 
-  @HostListener('document:keydown', ['$event'])
-  handleKeyBoardEvent(event: KeyboardEvent){
-    // console.log(event)
-    // if(event.code == 'Space'){
-    //   this.router.navigate(['/cancela/loading'])
-    // }
-    // if(event.code == 'Enter'){
-    //   this.router.navigate(['/cancela/options'])
-    // }
-  }
+  constructor(    
+    private authService: AuthService    
+  ) { } 
 
   ngOnInit(): void {
   }
+
+  activatedRoute(event){
+    this.displayHeader = (event.constructor.name != 'IdleComponent' && event.constructor.name != 'LoadingComponent') ? true : false;
+  }
+
   logout(){
     this.authService.logout();
   }
