@@ -10,7 +10,6 @@ import { LoadingComponent } from './pages/loading/loading.component';
 import { DialogSuccessComponent } from './pages/dialogs/success/dialog-success.component';
 import { DialogErrorComponent } from './pages/dialogs/error/dialog-error.component';
 import { ReadingErrorComponent } from './pages/reading-error/reading-error.component';
-import { ManualEntryComponent } from './pages/cancela-servico/manual-entry/manual-entry.component';
 import { ManualOptionsComponent } from './pages/cancela-servico/manual-options/manual-options.component';
 import { PlateComponent } from './pages/cancela-servico/templates/plate/plate.component';
 import { ChassiComponent } from './pages/cancela-servico/templates/chassi/chassi.component';
@@ -23,7 +22,6 @@ import { ReadingSuccessComponent } from './pages/reading-success/reading-success
     CancelaComponent,
     IdleComponent,
     LoadingComponent,
-    ManualEntryComponent,
     DialogSuccessComponent,
     DialogErrorComponent,
     ReadingErrorComponent,

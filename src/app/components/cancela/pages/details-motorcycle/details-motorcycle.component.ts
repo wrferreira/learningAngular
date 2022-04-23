@@ -14,14 +14,9 @@ export class DetailsMotorcycleComponent implements OnInit {
   @Input() onlyPlate: boolean = false;
   @Input() dataVehicle:CancelaLastRegister;
   public placaLength = 7;
-  public veiculoSituacao = VeiculoSituacao
-  public cancelaResponseEvt: CancelaResponseEvent
-
-  public directions = [
-    {id: 1, text: 'Entrada'},
-    {id: 2, text: 'Saída'},
-  ];  
-
+  public veiculoSituacao = VeiculoSituacao;
+  public cancelaResponseEvt: CancelaResponseEvent;
+  
   constructor(
     private cd: ChangeDetectorRef,
     private signalRService: SignalRService

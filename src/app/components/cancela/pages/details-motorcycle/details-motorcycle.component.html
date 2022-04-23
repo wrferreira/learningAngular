@@ -15,10 +15,10 @@
       [useKeyboard]="true"
       height="100%"
     >
-      <mat-carousel-slide>
+      <!-- <mat-carousel-slide>
         <app-plate *ngIf="dataVehicle?.placa?.length <= 7" [plate]="dataVehicle?.placa"></app-plate>
         <app-chassi *ngIf="dataVehicle?.placa?.length > 7" [plate]="dataVehicle?.placa"></app-chassi>
-      </mat-carousel-slide>
+      </mat-carousel-slide> -->
       <mat-carousel-slide>
         <img class="img-info" src="https://prod-backendop.mottu.dev/s3/download/mottu-usuario/{{ dataVehicle?.assinatura }}">
       </mat-carousel-slide>

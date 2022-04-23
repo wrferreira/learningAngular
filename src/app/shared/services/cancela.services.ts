@@ -18,6 +18,7 @@ export class CancelaService {
     setManualRegister(registro: CancelaRegistroManual) {
         return this.http.post<BaseRequestResult<any>>(this.baseUrlMottu + `api/v2/Cancela/RegistroManual`, registro);
     }
+    
     getLastRegister(cancela:CancelaData, id = 0) {
         return this.http.get<BaseRequestResult<CancelaLastRegister>>(this.baseUrlMottu + `api/v2/Cancela/Front/${cancela?.cancelaId}/${cancela?.tipo}/${id}`);
     }

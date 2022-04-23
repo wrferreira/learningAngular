@@ -1,35 +1,53 @@
 <mat-card class="initial-card">    
-    <div class="content">
-      <app-details-motorcycle [onlyPlate]="true"></app-details-motorcycle>
-      <!-- <div class="info">
-        <h1>Detalhes da moto</h1>
-        <span>Placa: <b>EAI-2E19</b></span>
-        <span>Situação: <b>Pronta pra aluguel</b></span>
-        <span>Chassi: <b>WERTYUCVBNHJKVBNMGHJFGHJK</b></span>
-        <div class="plate-component">
-          <app-plate *ngIf="plate.length <= 7" [plate]="plate"></app-plate>
-          <app-chassi *ngIf="plate.length > 7" [plate]="plate"></app-chassi>
-        </div>
-      </div> -->
-      <div class="alignment">
-        <div class="alignment-column">
-          <h2> {{ type === 1 ? 'Selecione o motivo da sua entrada' : 'Selecione o motivo da sua saída'}} </h2>
-          <div class="actions">
-            <div *ngFor="let action of actions" class="actions-btn alignment-column" [style.background]="action.color">
-              <div class="actions-btn-container" (click)="openDialog()">
-                <div class="actions-btn-text">
-                  <span>{{action.text}}</span>
-                </div>
-                <div class="contents">
-                  <div class="inner"></div>
-                </div>
-              </div>
+    <div class="content">      
+      <div class="content-options">
+        <section>          
+          <h1>CANCELA DE SERVIÇO</h1>
+          <mat-button-toggle-group [(ngModel)]="directionSelected" (change)="onDirectionSelected()">
+            <mat-button-toggle [value]="1">Entrada</mat-button-toggle>
+            <mat-button-toggle [value]="0">Saída</mat-button-toggle>            
+          </mat-button-toggle-group>
+        </section>
+
+        <section *ngIf="directionSelected != null">
+          <h2>Motivo da {{ directionSelected == 1 ? 'entrada' : 'saída' }}</h2>
+          <mat-button-toggle-group [(ngModel)]="optionSelected">
+            <mat-button-toggle color="primary"  *ngFor="let opt of optionsCancela" [value]="opt.id">{{ opt.descricao }}</mat-button-toggle>
+          </mat-button-toggle-group>
+        </section>
+
+        <section *ngIf="optionSelected != null">
+          <div class="alignment">
+            <div class="margin">
+              <app-plate *ngIf="plateFormControl.value?.length <= 7" [plate]="plateFormControl.value"></app-plate>
+              <app-chassi *ngIf="plateFormControl.value?.length > 7" [plate]="plateFormControl.value"></app-chassi>
+            </div>
+            <div>
+              <h2>Entre com a placa ou o chassi da moto: </h2>
+              <form class="alignment-column" (ngSubmit)="searchVehicle()">
+                <mat-form-field appearance="fill">
+                  <mat-label>Placa/Chassi</mat-label>
+                  <input matInput placeholder="PLA8T12" [formControl]="plateFormControl" name="plate" maxlength="17">
+                  <button *ngIf="plateFormControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="reset()">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+                <mat-error *ngIf="error !== ''" class="pb-2">{{ error }}</mat-error>
+                <button mat-raised-button color="primary" class="btn-search" [disabled]="error !== '' || plateFormControl.value == ''">
+                  <mat-icon>search</mat-icon>
+                  <span>Procurar</span>
+                </button>
+              </form>
             </div>
           </div>
-          <div class="alignment-start back-icon" (click)="chooseDirection()">
-            <mat-icon aria-hidden="false" aria-label="icon">arrow_back</mat-icon>
-          </div>
-        </div>
+        </section>
       </div>
+      <div class="content-info" *ngIf="showDetails">
+        <app-details-motorcycle [onlyPlate]="false"></app-details-motorcycle>
+      </div>    
     </div>
   </mat-card>
+
+  <div *ngIf="showLoading" class="loader-ctn">
+    <mat-spinner></mat-spinner>
+  </div>
